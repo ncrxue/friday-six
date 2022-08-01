@@ -12,23 +12,8 @@ const playerDict = {
 }
 
 function generateCheckboxes() {
-    const playerSelector = document.getElementById("playerSelector");
     for (let key in playerDict) {
-        let listElement = document.createElement('li');
-
-        let checkbox = document.createElement("input");
-        checkbox.type = "checkbox";
-        checkbox.name = key;
-        checkbox.id = key;
-        checkbox.value = playerDict[key];
-
-        let label = document.createElement("label");
-        label.innerHTML = key;
-
-        listElement.appendChild(checkbox);
-        listElement.appendChild(label);
-
-        playerSelector.appendChild(listElement);
+        createCheckbox(key);
     }
 }
 
@@ -88,6 +73,35 @@ function beautifyTeams(team) {
         }
     }
     return final;
+}
+
+function addPlayer() {
+    let name = document.getElementById('newName').value;
+    let rating = document.getElementById('newRating').value;
+
+    playerDict[name] = parseInt(rating);
+    createCheckbox(name);
+}
+
+function createCheckbox(name) {
+    const playerSelector = document.getElementById("playerSelector");
+
+    let listElement = document.createElement('li');
+
+    let checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.name = key;
+    checkbox.id = key;
+    checkbox.setAttribute("class", "checkbox");
+    checkbox.value = playerDict[key];
+
+    let label = document.createElement("label");
+    label.innerHTML = key;
+
+    listElement.appendChild(checkbox);
+    listElement.appendChild(label);
+
+    playerSelector.appendChild(listElement);
 }
 
 generateCheckboxes();
