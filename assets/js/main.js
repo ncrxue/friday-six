@@ -104,4 +104,11 @@ function createCheckbox(name) { //creates checkbox
     playerSelector.appendChild(listElement);
 }
 
+function pleaseWorkICANT() {
+    console.log("Hellow world");
+
+}
+
+pleaseWorkICANT();
+
 generateCheckboxes();
