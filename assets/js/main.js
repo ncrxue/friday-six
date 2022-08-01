@@ -90,13 +90,13 @@ function createCheckbox(name) {
 
     let checkbox = document.createElement("input");
     checkbox.type = "checkbox";
-    checkbox.name = key;
-    checkbox.id = key;
+    checkbox.name = name;
+    checkbox.id = name;
     checkbox.setAttribute("class", "checkbox");
-    checkbox.value = playerDict[key];
+    checkbox.value = playerDict[name];
 
     let label = document.createElement("label");
-    label.innerHTML = key;
+    label.innerHTML = name;
 
     listElement.appendChild(checkbox);
     listElement.appendChild(label);
