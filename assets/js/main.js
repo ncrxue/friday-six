@@ -83,7 +83,7 @@ function addPlayer() {
     createCheckbox(name);
 }
 
-function createCheckbox(name) {
+function createCheckbox(name) { //creates checkbox
     const playerSelector = document.getElementById("playerSelector");
 
     let listElement = document.createElement('li');
