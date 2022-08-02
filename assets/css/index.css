@@ -51,13 +51,13 @@ h3 {
     font-size: 1.5em;
   }
   li, p {
-    font-size: 1em;
+    font-size: 0.8em;
   }
   li {
     margin-left: 40%;
   }
   .add-player {
-    bottom: 10%;
+    bottom: 5%;
   }
 }
 @media (min-width: 813px) {
@@ -75,6 +75,6 @@ h3 {
     margin-left: 48%;
   }
   .add-player {
-    bottom: 20%;
+    bottom: 10%;
   }
 }/*# sourceMappingURL=index.css.map */

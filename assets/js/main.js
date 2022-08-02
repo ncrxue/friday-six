@@ -1,14 +1,27 @@
 const playerDict = {
-    "Harry": 4,
-    "Mateus": 4,
-    "Eyaad": 3,
-    "Abhijay": 2,
-    "Anthony": 2,
-    "Vihan": 2,
-    "Neil": 1,
-    "Pranav": 1,
-    "Nick": 1,
-    "Praveen": 0
+    "Harry": 7,
+    "Mateus": 7,
+    "Anthony": 6,
+    "Ryan": 6,
+    "Anirudh": 6,
+    "Kevin": 6,
+    "Michael": 5,
+    "Ethan": 5,
+    "Andrew": 5,
+    "Pranav": 5,
+    "Dinesh": 5,
+    "Eyaad": 4,
+    "Abhijay": 4,
+    "Gaurish": 4,
+    "Charlie": 4,
+    "Saurav": 4,
+    "Devam": 4,
+    "Vihan": 4,
+    "Neil": 3,
+    "Nick": 3,
+    "Allen": 2,
+    "Praveen": 2,
+    "Nash": 2
 }
 
 function generateCheckboxes() {
@@ -104,11 +117,11 @@ function createCheckbox(name) { //creates checkbox
     playerSelector.appendChild(listElement);
 }
 
-function pleaseWorkICANT() {
-    console.log("Hellow world");
+// function pleaseWorkICANT() {
+//     console.log("Hellow world");
 
-}
+// }
 
-pleaseWorkICANT();
+// pleaseWorkICANT();
 
 generateCheckboxes();
