@@ -24,8 +24,17 @@ const playerDict = {
     "Nash": 2
 }
 
+const synergyList = [
+    {players: ["Anthony", "Mateus"], bonus: 1},
+    {players: ["Anthony", "Ethan"], bonus: 1},
+    {players: ["Ethan", "Vihan"], bonus: 1}
+]
+
+let alphabetizedDict = {};
+
 function generateCheckboxes() {
-    for (let key in playerDict) {
+    alphabetizeDictionary();
+    for (let key in alphabetizedDict) {
         createCheckbox(key);
     }
 }
@@ -33,14 +42,14 @@ function generateCheckboxes() {
 function generateTeams() {
     let players = [];
 
-    for (let key in playerDict) {
+    for (let key in playerDict) { // gets players from checkboxes
         let checkbox = document.querySelector('#' + key);
         if (checkbox.checked) {
             players.push(key);
         }
     }
 
-    let team1 = [];
+    let team1 = []; // creates two teams randomly
     let team2 = [];
     let originalLength = players.length;
 
@@ -51,17 +60,26 @@ function generateTeams() {
     }
     team2 = players;
 
-    while (Math.abs(getTeamValue(team1) - getTeamValue(team2)) > 1) {
+    // randomly swaps around to balance teams
+    while (Math.abs(getTeamValue(team1) - getTeamValue(team2)) > 1) { 
         swapPlayers(team1, team2);
     }
 
-    document.getElementById("teamOne").innerHTML = "Team One: " + beautifyTeams(team1);
+
+    document.getElementById("teamOne").innerHTML = "Team One: " + beautifyTeams(team1); // displays teams
     document.getElementById("teamTwo").innerHTML = "Team Two: " + beautifyTeams(team2);
 }
 
 function getTeamValue(team) {
     let value = 0;
     team.forEach(p => value += playerDict[p]);
+
+    for (let i = 0; i < synergyList.length; i++) {
+        if (synergyList[i].players.every(val => team.includes(val))) {
+            value += synergyList[i].bonus;
+        }
+    }
+
     return value;
 }
 
@@ -123,5 +141,16 @@ function createCheckbox(name) { //creates checkbox
 // }
 
 // pleaseWorkICANT();
+
+function alphabetizeDictionary () {
+    let tempArray = [];
+    for (const [key, value] of Object.entries(playerDict)) {
+        tempArray.push(key);
+    }
+    tempArray.sort();
+    
+    alphabetizedDict = {};
+    tempArray.forEach(name => alphabetizedDict[name] = playerDict[name]);
+}
 
 generateCheckboxes();
