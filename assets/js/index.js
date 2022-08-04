@@ -107,15 +107,17 @@ function beautifyTeams(team) {
 }
 
 function addPlayer() {
-    let name = document.getElementById('newName').value;
+    let name = document.getElementById('newName').value.toLowerCase();
     let rating = document.getElementById('newRating').value;
 
-    if (name.toLowerCase() == 'yasaswi') {
-        window.alert("unable to create player 'yasaswi'. failed to create an instance where player \"pulls up\"");
-    }
+    name = name.charAt(0).toUpperCase() + name.slice(1);
 
-    playerDict[name] = parseInt(rating);
-    createCheckbox(name);
+    if (name == 'yasaswi') {
+        window.alert("unable to create player 'yasaswi'. failed to create an instance where player \"pulls up\"");
+    } else {
+        playerDict[name] = parseInt(rating);
+        createCheckbox(name);
+    }
 }
 
 function createCheckbox(name) { //creates checkbox
