@@ -112,7 +112,7 @@ function addPlayer() {
 
     name = name.charAt(0).toUpperCase() + name.slice(1);
 
-    if (name == 'yasaswi') {
+    if (name == 'Yasaswi') {
         window.alert("unable to create player 'yasaswi'. failed to create an instance where player \"pulls up\"");
     } else {
         playerDict[name] = parseInt(rating);
