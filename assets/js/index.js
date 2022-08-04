@@ -111,7 +111,7 @@ function addPlayer() {
     let rating = document.getElementById('newRating').value;
 
     if (name.toLowerCase() == 'yasaswi') {
-        window.alert("unable to create player 'yasaswi'. failed to create an instance where player has \"pulled up\"");
+        window.alert("unable to create player 'yasaswi'. failed to create an instance where player \"pulls up\"");
     }
 
     playerDict[name] = parseInt(rating);
