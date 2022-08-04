@@ -110,6 +110,10 @@ function addPlayer() {
     let name = document.getElementById('newName').value;
     let rating = document.getElementById('newRating').value;
 
+    if (name.toLowerCase() == 'yasaswi') {
+        window.alert("unable to create player 'yasaswi'. failed to create an instance where player has \"pulled up\"");
+    }
+
     playerDict[name] = parseInt(rating);
     createCheckbox(name);
 }
