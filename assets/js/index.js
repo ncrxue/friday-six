@@ -27,7 +27,8 @@ const playerDict = {
 const synergyList = [
     {players: ["Anthony", "Mateus"], bonus: 1},
     {players: ["Anthony", "Ethan"], bonus: 1},
-    {players: ["Ethan", "Vihan"], bonus: 1}
+    {players: ["Ethan", "Vihan"], bonus: 1},
+	{players: ["Mateus", "Harry"], bonus: 999}
 ]
 
 let alphabetizedDict = {};
